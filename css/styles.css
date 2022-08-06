@@ -8,12 +8,15 @@ h1{
   font-family: 'Sacramento', cursive;
   margin-top: 50vh;
   font-weight: bolder;
-  color: #00ADB5;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .heading{
   margin-top: 10%;
   padding-bottom: 5%;
+  color: #00ADB5;
+  text-shadow: 2px 2px 4px #393E46;
 }
 
 .row{
@@ -87,7 +90,6 @@ h1{
   margin: 0;
   padding: 0;
   text-align: center;
-  height: 100vh;
 }
 
 .person1{
@@ -126,6 +128,14 @@ h2{
   margin-bottom: 5%;
 }
 
-.result-image{
-  margin-top: 5%;
+.result-text{
+  margin: 0;
+  padding: 2.1%;
+  color: #00ADB5;
+  text-shadow: 2px 2px 4px #000000;
+}
+.result{
+  padding: 2% 0 2% 0;
+  margin: 0;
+  background-color: #393E46;
 }
