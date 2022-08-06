@@ -1,26 +1,38 @@
 function calculateRelation(){
-  var personOne=document.getElementsByClassName("person1")[0].value;
-  var personTwo=document.getElementsByClassName("person2")[0].value;
-  var uniqueValues= new Set();
+  var personOne=document.getElementsByClassName("person1")[0].value.toLowerCase();
+  var personTwo=document.getElementsByClassName("person2")[0].value.toLowerCase();
   var str="flames";
-  for(var i=0;i<personOne.length;++i){
-    if(personOne.charAt(i)===' '){
-      continue;
-    }
-    uniqueValues.add(personOne.charAt(i));
-  }
-  console.log(uniqueValues.size);
-  for(var i=0;i<personTwo.length;++i){
-      if(personTwo.charAt(i)===' '){
-        continue;
+  personOne=personOne.replaceAll(" ","");
+  personTwo=personTwo.replaceAll(" ","");
+  for (var i=0;i<personOne.length;i++){
+    for(var j=0;j<personTwo.length;j++){
+      if(personOne.charAt(i)===personTwo.charAt(j)){
+        personOne=personOne.substring(0,i)+'*'+personOne.substring(i+1);
+        personTwo=personTwo.substring(0,i)+'*'+personTwo.substring(i+1);
       }
-    uniqueValues.add(personTwo.charAt(i));
+    }
   }
-  console.log(uniqueValues.size);
-  var n=uniqueValues.size;
+  var n=0;
+  for(var i=0;i<personOne.length;++i){
+    if(personOne.charAt(i)!=='*'){
+      n++;
+    }
+  }
+  for(var i=0;i<personTwo.length;++i){
+    if(personTwo.charAt(i)!=='*'){
+      n++;
+    }
+  }
+  if(n==1){
+    document.querySelector("h1.result-image").innerHTML="Siblings";
+    return;
+  }
+  if(n==0){
+    alert("Please enter different Names");
+    return;
+  }
   var temp="";
   while(str.length!==1){
-    console.log(str);
     var tmpLen=n%str.length;
     if(tmpLen!==0){
       temp= str.substr(tmpLen)+str.substr(0,tmpLen-1);
@@ -30,7 +42,6 @@ function calculateRelation(){
     }
     str=temp;
   }
-  console.log(str);
   if(str.charAt(0)==='f'){
     document.querySelector("h1.result-image").innerHTML="Friends";
   }
