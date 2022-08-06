@@ -43,21 +43,21 @@ function calculateRelation(){
     str=temp;
   }
   if(str.charAt(0)==='f'){
-    document.querySelector("h1.result-image").innerHTML="Friends";
+    document.querySelector("h1.result-text").innerHTML="Friends";
   }
   else if(str.charAt(0)==='l'){
-    document.querySelector("h1.result-image").innerHTML="Love";
+    document.querySelector("h1.result-text").innerHTML="Love";
   }
   else if(str.charAt(0)==='a'){
-    document.querySelector("h1.result-image").innerHTML="Affection";
+    document.querySelector("h1.result-text").innerHTML="Affection";
   }
   else if(str.charAt(0)==='m'){
-    document.querySelector("h1.result-image").innerHTML="Marriage";
+    document.querySelector("h1.result-text").innerHTML="Marriage";
   }
   else if(str.charAt(0)==='e'){
-    document.querySelector("h1.result-image").innerHTML="Enemies";
+    document.querySelector("h1.result-text").innerHTML="Enemies";
   }
   else{
-    document.querySelector("h1.result-image").innerHTML="Siblings";
+    document.querySelector("h1.result-text").innerHTML="Siblings";
   }
 }
